@@ -15,18 +15,68 @@
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/hadiiemami/hadiiemami.github.io/blob/main/agri.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 12rem 1rem;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        header .contact-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        header .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        header .contact-links a:hover {
+            color: #60a5fa;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 8rem 1rem;
+                min-height: 250px;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-700">
     <!-- Header -->
-    <header class="bg-blue-800 text-white text-center py-12 fade-in">
-        <h1 class="text-4xl font-bold">Hadi Emami</h1>
-        <p class="text-xl mt-2">Remote Sensing Specialist | Precision Agriculture & Environmental Monitoring</p>
-        <div class="mt-4 flex justify-center space-x-6">
-            <a href="mailto:hadiemami.rs@gmail.com" class="text-white hover:text-gray-300"><i class="fas fa-envelope mr-2"></i>hadiemami.rs@gmail.com</a>
-            <a href="tel:+989147820221" class="text-white hover:text-gray-300"><i class="fas fa-phone mr-2"></i>+98 914 782 0221</a>
-            <a href="https://linkedin.com/in/hadiemami" class="text-white hover:text-gray-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-            <a href="https://github.com/hadiiemami" class="text-white hover:text-gray-300"><i class="fab fa-github mr-2"></i>GitHub</a>
+    <header class="fade-in">
+        <h1>Hadi Emami</h1>
+        <p>Remote Sensing Specialist | Precision Agriculture & Environmental Monitoring</p>
+        <div class="contact-links">
+            <a href="mailto:hadiemami.rs@gmail.com"><i class="fas fa-envelope mr-2"></i>hadiemami.rs@gmail.com</a>
+            <a href="tel:+989147820221"><i class="fas fa-phone mr-2"></i>+98 914 782 0221</a>
+            <a href="https://linkedin.com/in/hadiemami"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+            <a href="https://github.com/hadiiemami"><i class="fab fa-github mr-2"></i>GitHub</a>
         </div>
     </header>
 
@@ -43,7 +93,7 @@
             <h3 class="text-xl font-semibold">M.Sc. in Remote Sensing and GIS</h3>
             <p class="text-gray-600">Shahid Beheshti University, Tehran, Iran | 2018 – 2022</p>
             <ul class="list-disc list-inside text-gray-700">
-                <li>Ranked 14th nationwide in M.Sc. entrance exam (Top 0.3%)</li>
+                <li>Ranked 14th nationwide in M.Sc. entrance exam (Top rhymes_with_0.3%)</li>
                 <li>Thesis: Prediction and estimation of wheat yield using Sentinel-2 imagery and deep learning</li>
                 <li>Supervisor: Dr. Davood Ashourloo</li>
                 <li>GPA: 3.22/4.0</li>
@@ -148,7 +198,7 @@
     <section class="max-w-4xl mx-auto py-8 px-4 fade-in">
         <h2 class="section-title">Awards & Certifications</h2>
         <ul class="list-disc list-inside">
-            <li>Ranked 14th in National M.Sc. Entrance Exam (Top 0.3%)</li>
+            <li>Ranked 14th in National M.Sc. Entrance Exam (Top rhymes_with_0.3%)</li>
             <li>Highest nationwide score in Remote Sensing section of M.Sc. Entrance Exam</li>
             <li>Harvard University Online Certificate in Computer Science (CS50x)</li>
         </ul>
