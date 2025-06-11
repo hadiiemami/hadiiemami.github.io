@@ -53,6 +53,21 @@
         header .contact-links a:hover {
             color: #60a5fa;
         }
+        .profile-pic {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
         @media (max-width: 768px) {
             header {
                 padding: 8rem 1rem;
@@ -64,12 +79,19 @@
             header p {
                 font-size: 1.2rem;
             }
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-700">
     <!-- Header -->
     <header class="fade-in">
+        <img src="/photo_2024-02-07_15-48-40.jpg" alt="Hadi Emami Profile Picture" class="profile-pic">
         <h1>Hadi Emami</h1>
         <p>Remote Sensing Specialist | Precision Agriculture & Environmental Monitoring</p>
         <div class="contact-links">
