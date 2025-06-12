@@ -25,6 +25,7 @@
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid #87ceeb;
+      object-position: center;
     }
     .section-title {
       font-size: 2rem;
@@ -56,12 +57,21 @@
     .btn-primary:hover {
       background-color: #6ab0d6;
     }
+    header {
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .teaching-slider .swiper-slide {
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header class="bg-gray-100 py-10 text-center">
-    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img mx-auto mb-4">
+    <img src="photo_2024-02-07_15-48-40.jpg" alt="Profile Picture" class="profile-img mx-auto mb-4">
     <h1 class="text-4xl font-bold">Hadi Emami</h1>
     <p class="text-lg mt-2">Data Specialist, Programmer, and Instructor</p>
     <div class="mt-4 flex justify-center space-x-4">
@@ -393,6 +403,8 @@
 
     const teachingSwiper = new Swiper('.teaching-slider', {
       slidesPerView: 1,
+      slidesPerColumn: 2,
+      slidesPerColumnFill: 'row',
       spaceBetween: 20,
       loop: true,
       autoplay: {
@@ -410,9 +422,11 @@
       breakpoints: {
         640: {
           slidesPerView: 2,
+          slidesPerColumn: 2,
         },
         1024: {
           slidesPerView: 3,
+          slidesPerColumn: 2,
         },
       },
     });
