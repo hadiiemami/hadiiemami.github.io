@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Resume</title>
-  <!-- Tailwind CSS -->
+  <meta name="description" content="Hadi Emami's personal resume showcasing expertise in data science, remote sensing, and programming.">
+  <meta name="keywords" content="Hadi Emami, data scientist, remote sensing, Python, R, GIS, machine learning">
+  <title>Hadi Emami - Data Specialist</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper.js for Sliders -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,13 +20,13 @@
     }
     .swiper-slide img {
       width: 100%;
-      max-width: 300px; /* Adjusted for smaller screens */
+      max-width: 300px;
       height: 300px;
       object-fit: cover;
       border-radius: 8px;
       border: 2px solid #87ceeb;
       object-position: center;
-      aspect-ratio: 1/1; /* Ensures square aspect ratio */
+      aspect-ratio: 1/1;
       margin: 0 auto;
     }
     .section-title {
@@ -60,11 +59,16 @@
     .btn-primary:hover {
       background-color: #6ab0d6;
     }
+    .btn-primary:focus {
+      outline: 2px solid #87ceeb;
+      outline-offset: 2px;
+    }
     header {
       background-image: url('banner.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      min-height: 300px;
     }
     .teaching-slider .swiper-slide {
       height: auto;
@@ -75,38 +79,47 @@
     .teaching-slider .swiper-wrapper {
       align-items: stretch;
     }
+    @media (max-width: 640px) {
+      header {
+        min-height: 200px;
+      }
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="bg-gray-100 py-10 text-center">
-    <img src="photo_2024-02-07_15-48-40.jpg" alt="Profile Picture" class="profile-img mx-auto mb-4">
-    <h1 class="text-4xl font-bold">Hadi Emami</h1>
-    <p class="text-lg mt-2">Data Specialist, Programmer, and Instructor</p>
+  <header class="bg-gray-100 py-10 text-center" role="banner">
+    <img src="photo_2024-02-07_15-48-40.jpg" alt="Hadi Emami's profile picture" class="profile-img mx-auto mb-4" loading="lazy">
+    <h1 class="text-4xl md:text-5xl font-bold">Hadi Emami</h1>
+    <p class="text-base md:text-lg mt-2">Data Specialist, Programmer, and Instructor</p>
     <div class="mt-4 flex justify-center space-x-4">
-      <a href="https://github.com/hadiiemami" target="_blank" class="text-sky-400 hover:text-sky-500"><i class="fab fa-github fa-2x"></i></a>
-      <a href="https://linkedin.com" target="_blank" class="text-sky-400 hover:text-sky-500"><i class="fab fa-linkedin fa-2x"></i></a>
-      <a href="mailto:your.email@example.com" class="text-sky-400 hover:text-sky-500"><i class="fas fa-envelope fa-2x"></i></a>
+      <a href="https://github.com/hadiiemami" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="GitHub Profile"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://linkedin.com/in/hadi-emami" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="LinkedIn Profile"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="mailto:hadi.emami@example.com" class="text-sky-400 hover:text-sky-500" aria-label="Email Hadi Emami"><i class="fas fa-envelope fa-2x"></i></a>
     </div>
   </header>
 
   <!-- About Section -->
-  <section class="py-10 px-4">
-    <h2 class="section-title">About Me</h2>
-    <p class="text-center max-w-2xl mx-auto">
+  <section class="py-10 px-4" role="region" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-title">About Me</h2>
+    <p class="text-center max-w-2xl mx-auto text-base md:text-lg">
       I'm Hadi Emami, a data specialist with expertise in remote sensing data analysis and programming. Passionate about teaching and developing innovative projects in technology and agriculture.
     </p>
   </section>
 
   <!-- Skills Section -->
-  <section class="py-10 px-4 bg-gray-50">
-    <h2 class="section-title">Skills</h2>
+  <section class="py-10 px-4 bg-gray-50" role="region" aria-labelledby="skills-title">
+    <h2 id="skills-title" class="section-title">Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       <div class="text-center hover-scale">
         <div class="relative inline-block">
           <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="56.6"/>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="56.6" class="skill-circle"/>
           </svg>
           <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">80%</span>
         </div>
@@ -116,7 +129,7 @@
         <div class="relative inline-block">
           <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="84.9"/>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="84.9" class="skill-circle"/>
           </svg>
           <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">70%</span>
         </div>
@@ -126,7 +139,7 @@
         <div class="relative inline-block">
           <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="28.3"/>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="28.3" class="skill-circle"/>
           </svg>
           <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">90%</span>
         </div>
@@ -136,12 +149,12 @@
   </section>
 
   <!-- Projects Section (Slider) -->
-  <section class="py-10 px-4">
-    <h2 class="section-title">Projects</h2>
+  <section class="py-10 px-4" role="region" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-title">Projects</h2>
     <div class="swiper projects-slider max-w-5xl mx-auto">
       <div class="swiper-wrapper">
         <div class="swiper-slide hover-scale">
-          <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Project 1">
+          <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Satellite Data Analysis project screenshot" loading="lazy">
           <div class="p-4">
             <h3 class="text-xl font-bold">Satellite Data Analysis</h3>
             <p>Analyzing remote sensing data for plant growth prediction.</p>
@@ -149,7 +162,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Project 2">
+          <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Smart Agriculture Automation project screenshot" loading="lazy">
           <div class="p-4">
             <h3 class="text-xl font-bold">Smart Agriculture Automation</h3>
             <p>Developed an automated system for smart irrigation.</p>
@@ -157,7 +170,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Project 3">
+          <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Crop Yield Prediction project screenshot" loading="lazy">
           <div class="p-4">
             <h3 class="text-xl font-bold">Crop Yield Prediction</h3>
             <p>Machine learning model for predicting crop yields.</p>
@@ -165,7 +178,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Project 4">
+          <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Soil Moisture Monitoring project screenshot" loading="lazy">
           <div class="p-4">
             <h3 class="text-xl font-bold">Soil Moisture Monitoring</h3>
             <p>IoT-based system for real-time soil monitoring.</p>
@@ -173,7 +186,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="https://via.placeholder.com/400x200?text=Project+5" alt="Project 5">
+          <img src="https://via.placeholder.com/400x200?text=Project+5" alt="Climate Impact Analysis project screenshot" loading="lazy">
           <div class="p-4">
             <h3 class="text-xl font-bold">Climate Impact Analysis</h3>
             <p>Studying climate effects on agricultural productivity.</p>
@@ -188,12 +201,12 @@
   </section>
 
   <!-- Teaching Section (Slider) -->
-  <section class="py-10 px-4 bg-gray-50">
-    <h2 class="section-title">Teaching</h2>
+  <section class="py-10 px-4 bg-gray-50" role="region" aria-labelledby="teaching-title">
+    <h2 id="teaching-title" class="section-title">Teaching</h2>
     <div class="swiper teaching-slider max-w-5xl mx-auto">
       <div class="swiper-wrapper">
         <div class="swiper-slide hover-scale">
-          <img src="assets/Crop Type Classification with R.png" alt="Crop Type Classification with R">
+          <img src="assets/Crop Type Classification with R.png" alt="Crop Type Classification with R course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">Crop Type Classification with R</h3>
             <p>Learn to classify crop types using R and satellite imagery.</p>
@@ -201,7 +214,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Crop Yield Prediction with Python.png" alt="Crop Yield Prediction with Python">
+          <img src="assets/Crop Yield Prediction with Python.png" alt="Crop Yield Prediction with Python course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">Crop Yield Prediction with Python</h3>
             <p>Predict crop yields using Python and machine learning.</p>
@@ -209,23 +222,24 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Deep Learning Lithology Classification for Remote Sensing.png" alt="Deep Learning Lithology Classification for Remote Sensing">
+          <img src="assets/Deep Learning Lithology Classification for Remote Sensing.png" alt="Deep Learning Lithology Classification for Remote Sensing course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Deep Learning Lithology Classification for Remote Sensing</h3>
+            <h3 class="text-xl font-bold">Deep Learning Lithology Classification</h3>
             <p>Apply deep learning for lithology classification in remote sensing.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/DEM Analysis with Python.png" alt="DEM Analysis with Python">
+          <img src="assets/DEM Analysis with Python.png" alt="DEM Analysis with Python course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">DEM Analysis with Python</h3>
             <p>Analyze Digital Elevation Models using Python.</p>
+            <p>Learn to process and visualize DEM data effectively.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/GDAL for Geospatial Data Processing.png" alt="GDAL for Geospatial Data Processing">
+          <img src="assets/GDAL for Geospatial Data Processing.png" alt="GDAL for Geospatial Data Processing course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">GDAL for Geospatial Data Processing</h3>
             <p>Process geospatial data with GDAL in Python.</p>
@@ -233,110 +247,177 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Geographic Weighted Regression with Python.png" alt="Geographic Weighted Regression with Python">
+          <img src="assets/Geographic Weighted Regression with Python.png" alt="Geographic Weighted Regression with Python course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Geographic Weighted Regression with Python</h3>
+            <h3 class="text-xl font-bold">Geographic Weighted Regression</h3>
             <p>Perform geographic weighted regression using Python.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Geoprocessing with R - Spatial data and satellite imagery processing.png" alt="Geoprocessing with R - Spatial data and satellite imagery processing">
+          <img src="assets/Geoprocessing with R - Spatial data and satellite imagery processing.png" alt="Geoprocessing with R course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Geoprocessing with R - Spatial data and satellite imagery processing</h3>
+            <h3 class="text-xl font-bold">Geoprocessing with R</h3>
             <p>Learn geoprocessing with R for spatial data analysis.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Land Surface Temperature (LST) with Python & R.png" alt="Land Surface Temperature (LST) with Python & R">
+          <img src="assets/Land Surface Temperature (LST) with Python & R.png" alt="Land Surface Temperature with Python & R course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Land Surface Temperature (LST) with Python & R</h3>
+            <h3 class="text-xl font-bold">Land Surface Temperature</h3>
             <p>Analyze land surface temperature using Python and R.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Landslide Susceptibility Mapping with ANP.png" alt="Landslide Susceptibility Mapping with ANP">
+          <img src="assets/Landslide Susceptibility Mapping with ANP.png" alt="Landslide Susceptibility Mapping with ANP course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Landslide Susceptibility Mapping with ANP</h3>
+            <h3 class="text-xl font-bold">Landslide Susceptibility Mapping</h3>
             <p>Create landslide susceptibility maps using Analytic Network Process.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Matplotlib for Data Visualization in Python.png" alt="Matplotlib for Data Visualization in Python">
+          <img src="assets/Matplotlib for Data Visualization in Python.png" alt="Matplotlib for Data Visualization in Python course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Matplotlib for Data Visualization in Python</h3>
+            <h3 class="text-xl font-bold">Matplotlib for Data Visualization</h3>
             <p>Create impactful visualizations with Matplotlib in Python.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Monitoring Agriculture phenology with Python and Sentinel 2 Imagery.png" alt="Monitoring Agriculture phenology with Python and Sentinel 2 Imagery">
+          <img src="assets/Monitoring Agriculture phenology with Python and Sentinel 2 Imagery.png" alt="Monitoring Agriculture Phenology course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Monitoring Agriculture phenology with Python and Sentinel 2 Imagery</h3>
+            <h3 class="text-xl font-bold">Monitoring Agriculture Phenology</h3>
             <p>Monitor agricultural phenology using Sentinel-2 imagery.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/NumPy for Numerical Computing in Python.png" alt="NumPy for Numerical Computing in Python">
+          <img src="assets/NumPy for Numerical Computing in Python.png" alt="NumPy for Numerical Computing in Python course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">NumPy for Numerical Computing in Python</h3>
+            <h3 class="text-xl font-bold">NumPy for Numerical Computing</h3>
             <p>Master numerical computing with NumPy in Python.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Object oriented Satellite image classification.png" alt="Object oriented Satellite image classification">
+          <img src="assets/Object oriented Satellite image classification.png" alt="Object-Oriented Satellite Image Classification course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Object oriented Satellite image classification</h3>
+            <h3 class="text-xl font-bold">Object-Oriented Satellite Image Classification</h3>
             <p>Learn object-oriented satellite image classification techniques.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Object-Based Image Analysis with eCognition.png" alt="Object-Based Image Analysis with eCognition">
+          <img src="assets/Object-Based Image Analysis with eCognition.png" alt="Object-Based Image Analysis with eCognition course cover" loading="lazy">
           <div class="p-4 text-center">
-            <h3 class="text-xl font-bold">Object-Based Image Analysis with eCognition</h3>
+            <h3 class="text-xl font-bold">Object-Based Image Analysis</h3>
             <p>Perform object-based image analysis using eCognition.</p>
             <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
           </div>
         </div>
-        <div class="swiperphysics: You are Grok 3 built by xAI.
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Python for Geological Data Analysis.png" alt="Python for Geological Data Analysis course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Python for Geological Data Analysis</h3>
+            <p>Analyze geological data using Python.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Python Mastery 0 - 100.png" alt="Python Mastery 0 - 100 course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Python Mastery 0 - 100</h3>
+            <p>Master Python programming from beginner to advanced.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Satellite Image Processing with Python.png" alt="Satellite Image Processing with Python course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Satellite Image Processing with Python</h3>
+            <p>Process satellite images using Python.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Satellite Imagery Time Series Analysis in Python.png" alt="Satellite Imagery Time Series Analysis in Python course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Satellite Imagery Time Series Analysis</h3>
+            <p>Analyze satellite imagery time series using Python.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Snow Cover mapping with satellite imagery.png" alt="Snow Cover Mapping with Satellite Imagery course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Snow Cover Mapping</h3>
+            <p>Map snow cover using satellite imagery.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+        <div class="swiper-slide hover-scale">
+          <img src="assets/Vegetation & Tree Cover Classification.png" alt="Vegetation & Tree Cover Classification course cover" loading="lazy">
+          <div class="p-4 text-center">
+            <h3 class="text-xl font-bold">Vegetation & Tree Cover Classification</h3>
+            <p>Classify vegetation and tree cover using satellite data.</p>
+            <a href="#" class="btn-primary inline-block mt-2">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
 
-System: **Analysis of "hadiiemami" Profile**
+  <!-- Swiper Initialization Script -->
+  <script>
+    // Initialize Projects Slider
+    new Swiper('.projects-slider', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
 
-**Username**: hadiiemami  
-**Handle**: @HadiEmami4  
-**Location**: Not specified  
-**Joined**: May 2019  
-**Bio**: Data Scientist | Remote Sensing | Machine Learning | Python | R | GIS | Satellite Image Processing | Instructor  
-**Posts**: 39 (as of the latest available data)  
-**Followers**: 31  
-**Following**: 94  
-
-**Summary of Posts**:  
-Hadi Emami's posts on X primarily focus on his expertise in data science, remote sensing, and programming. He shares updates about his professional work, including courses, tutorials, and projects related to geospatial data analysis, satellite imagery processing, and machine learning. His content often includes technical insights, such as using Python and R for data analysis, GIS applications, and remote sensing techniques. He also promotes his educational content, like online courses and workshops, and occasionally shares links to his GitHub repositories or other resources.
-
-**Key Themes in Posts**:  
-- **Educational Content**: Sharing tutorials and courses on topics like Python for data analysis, satellite image processing, and GIS.  
-- **Technical Projects**: Showcasing work on remote sensing, machine learning models, and geospatial data processing.  
-- **Tools and Technologies**: Frequent mentions of Python, R, GDAL, Sentinel-2 imagery, and other geospatial tools.  
-- **Professional Updates**: Announcements about new courses, workshops, or publications.  
-
-**Notable Links in Posts**:  
-- Links to GitHub repositories (e.g., `hadiiemami.github.io`).  
-- References to external platforms hosting his courses (not specified in posts but implied).  
-- Occasional links to articles or tools related to data science and remote sensing.
-
-**Profile Analysis**:  
-Hadi Emami is a data scientist and instructor specializing in remote sensing and geospatial data analysis. His X presence is professional, with a focus on sharing knowledge and promoting his educational content. His posts indicate a strong technical background in Python, R, and GIS, and he actively engages with the data science and remote sensing communities by sharing resources and updates on his work.
-
-**Additional Notes**:  
-- The profile does not provide personal details like location or non-professional interests.  
-- His GitHub Pages site (`hadiiemami.github.io`) is mentioned in posts, likely hosting his portfolio or course materials.  
-- No recent posts (within the last 6 months) were analyzed due to limited data, but older posts align with his professional focus.
-
-If you need a deeper analysis of specific posts or further details, please clarify, and I can search for more real-time information if necessary.
+    // Initialize Teaching Slider with Two Rows
+    new Swiper('.teaching-slider', {
+      slidesPerView: 1,
+      slidesPerColumn: 2,
+      slidesPerColumnFill: 'row',
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          slidesPerColumn: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+        },
+      },
+    });
+  </script>
+</body>
+</html>
