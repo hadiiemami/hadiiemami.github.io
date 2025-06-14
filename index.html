@@ -88,6 +88,53 @@
         height: 120px;
       }
     }
+    /* New Styles for Skills Section */
+    .skills-card {
+      background-color: #ffffff;
+      border: 2px solid #87ceeb;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .skills-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: #1f2937;
+    }
+    .skill-item i {
+      color: #87ceeb;
+      margin-right: 0.75rem;
+      width: 20px;
+      text-align: center;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .progress-bar {
+      height: 6px;
+      background-color: #e5e7eb;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.25rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #87ceeb;
+      transition: width 1s ease;
+    }
   </style>
 </head>
 <body>
@@ -114,36 +161,50 @@
   <!-- Skills Section -->
   <section class="py-10 px-4 bg-gray-50" role="region" aria-labelledby="skills-title">
     <h2 id="skills-title" class="section-title">Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="text-center hover-scale">
-        <div class="relative inline-block">
-          <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="56.6" class="skill-circle"/>
-          </svg>
-          <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">80%</span>
-        </div>
-        <p class="mt-2">Python</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <!-- Programming & Software -->
+      <div class="skills-card fade-in">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
+          <i class="fas fa-code mr-2"></i> Programming & Software
+        </h3>
+        <ul class="space-y-2">
+          <li class="skill-item">
+            <i class="fab fa-python"></i> Python
+            <div class="progress-bar"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+          </li>
+          <li class="skill-item"><i class="fab fa-r-project"></i> R</li>
+          <li class="skill-item"><i class="fab fa-js"></i> JavaScript</li>
+          <li class="skill-item"><i class="fas fa-code"></i> Julia</li>
+          <li class="skill-item"><i class="fas fa-map"></i> ArcGIS</li>
+          <li class="skill-item"><i class="fas fa-map"></i> ArcGIS Pro</li>
+          <li class="skill-item"><i class="fas fa-map"></i> QGIS</li>
+          <li class="skill-item"><i class="fas fa-database"></i> PostGIS</li>
+          <li class="skill-item"><i class="fas fa-image"></i> ENVI</li>
+          <li class="skill-item"><i class="fas fa-cogs"></i> eCognition</li>
+          <li class="skill-item"><i class="fas fa-file-word"></i> MS Office</li>
+          <li class="skill-item"><i class="fas fa-globe"></i> Google Earth Engine</li>
+        </ul>
       </div>
-      <div class="text-center hover-scale">
-        <div class="relative inline-block">
-          <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="84.9" class="skill-circle"/>
-          </svg>
-          <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">70%</span>
-        </div>
-        <p class="mt-2">Data Analysis</p>
-      </div>
-      <div class="text-center hover-scale">
-        <div class="relative inline-block">
-          <svg class="w-24 h-24 mx-auto" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#87ceeb" stroke-width="10"/>
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#d1d5db" stroke-width="10" stroke-dasharray="283" stroke-dashoffset="28.3" class="skill-circle"/>
-          </svg>
-          <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl">90%</span>
-        </div>
-        <p class="mt-2">Remote Sensing</p>
+      <!-- Data Science & Analytics -->
+      <div class="skills-card fade-in">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
+          <i class="fas fa-chart-line mr-2"></i> Data Science & Analytics
+        </h3>
+        <ul class="space-y-2">
+          <li class="skill-item">
+            <i class="fas fa-brain"></i> Machine Learning
+            <div class="progress-bar"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+          </li>
+          <li class="skill-item"><i class="fas fa-brain"></i> Deep Learning</li>
+          <li class="skill-item"><i class="fas fa-search"></i> Data Mining & Analysis</li>
+          <li class="skill-item"><i class="fas fa-database"></i> Database Management (SQL, NoSQL, PostgreSQL)</li>
+          <li class="skill-item"><i class="fas fa-chart-bar"></i> Data Visualization</li>
+          <li class="skill-item"><i class="fas fa-server"></i> Big Data Tools</li>
+          <li class="skill-item"><i class="fab fa-docker"></i> Containerization: Docker</li>
+          <li class="skill-item"><i class="fas fa-cubes"></i> Kubernetes</li>
+          <li class="skill-item"><i class="fab fa-git"></i> Version Control: Git, GitHub</li>
+          <li class="skill-item"><i class="fas fa-plug"></i> APIs: REST APIs, OpenWeather API, Google Maps API</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -418,6 +479,17 @@
         },
       },
     });
+
+    // Fade-in Animation for Skills Section
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeInElements.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
