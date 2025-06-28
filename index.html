@@ -15,7 +15,7 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
+      background-color: #f8fafc;
       color: #1f2937;
     }
     .swiper-slide img {
@@ -23,41 +23,52 @@
       max-width: 400px;
       height: 225px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 2px solid #87ceeb;
       object-position: center;
       aspect-ratio: 16/9;
       margin: 0 auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
     .section-title {
-      font-size: 2rem;
-      font-weight: bold;
+      font-size: 2.25rem;
+      font-weight: 700;
       text-align: center;
-      margin-bottom: 2rem;
-      color: #87ceeb;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(90deg, #87ceeb, #4b9cd3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .profile-img {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       border: 4px solid #87ceeb;
       object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .hover-scale {
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .hover-scale:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     .btn-primary {
-      background-color: #87ceeb;
-      color: #1f2937;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      transition: background-color 0.3s ease;
+      background: linear-gradient(90deg, #87ceeb, #4b9cd3);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
     }
     .btn-primary:hover {
-      background-color: #6ab0d6;
+      background: linear-gradient(90deg, #6ab0d6, #3b82f6);
+      transform: translateY(-2px);
     }
     .btn-primary:focus {
       outline: 2px solid #87ceeb;
@@ -68,7 +79,9 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 300px;
+      min-height: 320px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .teaching-slider .swiper-slide {
       height: auto;
@@ -79,26 +92,47 @@
     .teaching-slider .swiper-wrapper {
       align-items: stretch;
     }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    nav a {
+      color: #1f2937;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #4b9cd3;
+    }
     @media (max-width: 640px) {
       header {
-        min-height: 200px;
+        min-height: 240px;
       }
       .profile-img {
         width: 120px;
         height: 120px;
       }
+      .section-title {
+        font-size: 1.75rem;
+      }
     }
-    .skills-card {
+    .skills-card, .cert-card {
       background-color: #ffffff;
       border: 2px solid #87ceeb;
-      border-radius: 8px;
-      padding: 1.5rem;
+      border-radius: 12px;
+      padding: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
     }
-    .skills-card:hover {
+    .skills-card:hover, .cert-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
     .skill-item {
       display: flex;
@@ -131,14 +165,31 @@
     }
     .progress-bar-fill {
       height: 100%;
-      background-color: #87ceeb;
+      background: linear-gradient(90deg, #87ceeb, #4b9cd3);
       transition: width 1s ease;
+    }
+    .cert-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 2px solid #87ceeb;
+      margin: 0 auto;
+      display: block;
     }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="text-center">
+    <a href="#about-title">About</a>
+    <a href="#certifications-title">Certifications</a>
+    <a href="#skills-title">Skills</a>
+    <a href="#projects-title">Projects</a>
+    <a href="#teaching-title">Teaching</a>
+  </nav>
+
   <!-- Header -->
-  <header class="bg-gray-100 py-10 text-center" role="banner">
+  <header class="bg-gray-100 py-12 text-center" role="banner">
     <img src="photo_2024-02-07_15-48-40.jpg" alt="Hadi Emami's profile picture" class="profile-img mx-auto mb-4" loading="lazy">
     <h1 class="text-4xl md:text-5xl font-bold">Hadi Emami</h1>
     <p class="text-base md:text-lg mt-2">Data Specialist, Programmer, and Instructor</p>
@@ -150,15 +201,29 @@
   </header>
 
   <!-- About Section -->
-  <section class="py-10 px-4" role="region" aria-labelledby="about-title">
+  <section class="py-12 px-4" role="region" aria-labelledby="about-title">
     <h2 id="about-title" class="section-title">About Me</h2>
     <p class="text-center max-w-2xl mx-auto text-base md:text-lg">
       I'm Hadi Emami, a data specialist with expertise in remote sensing data analysis and programming. Passionate about teaching and developing innovative projects in technology and agriculture.
     </p>
   </section>
 
+  <!-- Certifications Section -->
+  <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="certifications-title">
+    <h2 id="certifications-title" class="section-title">Certifications</h2>
+    <div class="cert-card fade-in max-w-2xl mx-auto">
+      <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
+        <i class="fas fa-certificate mr-2"></i> Harvard Online Computer Science Certificate
+      </h3>
+      <img src="CER/cert.PNG" alt="Harvard Online Computer Science Certificate" class="cert-img" loading="lazy">
+      <div class="text-center mt-4">
+        <a href="https://certificates.cs50.io/23dd40d4-d013-4c27-a51e-40e98ab0c767.pdf?size=letter" target="_blank" class="btn-primary inline-block">Verify Certificate</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Skills Section -->
-  <section class="py-10 px-4 bg-gray-50" role="region" aria-labelledby="skills-title">
+  <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="skills-title">
     <h2 id="skills-title" class="section-title">Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       <!-- Programming & Software -->
@@ -209,7 +274,7 @@
   </section>
 
   <!-- Projects Section (Slider) -->
-  <section class="py-10 px-4" role="region" aria-labelledby="projects-title">
+  <section class="py-12 px-4" role="region" aria-labelledby="projects-title">
     <h2 id="projects-title" class="section-title">Projects</h2>
     <div class="swiper projects-slider max-w-5xl mx-auto">
       <div class="swiper-wrapper">
@@ -277,7 +342,7 @@
   </section>
 
   <!-- Teaching Section (Slider) -->
-  <section class="py-10 px-4 bg-gray-50" role="region" aria-labelledby="teaching-title">
+  <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="teaching-title">
     <h2 id="teaching-title" class="section-title">Teaching</h2>
     <div class="swiper teaching-slider max-w-5xl mx-auto">
       <div class="swiper-wrapper">
@@ -427,7 +492,7 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Snow Cover mapping with satellite imagery.png" alt="Snow Cover Mapping with Satellite Imagery course cover" loading="lazy">
+          <img src="assets/Snow Cover Mapping with Satellite Imagery.png" alt="Snow Cover Mapping with Satellite Imagery course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">Snow Cover Mapping</h3>
             <p>Map snow cover using satellite imagery.</p>
@@ -495,7 +560,7 @@
       },
     });
 
-    // Fade-in Animation for Skills Section
+    // Fade-in Animation for Skills and Certifications Sections
     const fadeInElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
