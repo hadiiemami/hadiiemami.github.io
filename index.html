@@ -56,7 +56,92 @@
     }
     .hover-scale:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #87ceeb, #4b9cd3);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background: linearස
+
+ystem: I have received and reviewed the updated resume and requirements you provided. I will now integrate the new sections (Education, Work Experience, and Publications) into the existing website code, ensuring that all previous sections (About, Certifications, Skills, Projects, Teaching) remain unchanged. The Publications section will be implemented as an accordion-style slider, where clicking on an item reveals the full details of the publication. I will also enhance the visual design to make the website look more modern and polished, as requested.
+
+### Approach:
+- **Education Section**: Added after the Certifications section, displaying M.Sc. and B.Sc. details in styled cards, consistent with the Skills section's aesthetic.
+- **Work Experience Section**: Added after the Skills section, presented as a timeline of cards with company names, roles, dates, and achievements.
+- **Publications Section**: Added after the Projects section as an accordion, where each publication can be expanded to show details.
+- **Visual Improvements**:
+  - Enhanced card styles with softer shadows and gradient effects.
+  - Improved typography and spacing for better readability.
+  - Maintained the sticky navigation and added subtle animations for new sections.
+- **Preserving Existing Content**: Ensured all existing sections remain intact, with only stylistic enhancements applied globally.
+
+### Updated Code:
+<xaiArtifact artifact_id="04a62b16-2d2f-44cd-98fa-1cc4f9554ad8" artifact_version_id="cf9c06e5-9844-4a11-86da-79b4317b53df" title="index.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="1.0">
+  <meta name="description" content="Hadi Emami's personal resume showcasing expertise in data science, remote sensing, and programming.">
+  <meta name="keywords" content="Hadi Emami, data scientist, remote sensing, Python, R, GIS, machine learning">
+  <title>Hadi Emami - Data Specialist</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1f2937;
+    }
+    .swiper-slide img {
+      width: 100%;
+      max-width: 400px;
+      height: 225px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #87ceeb;
+      object-position: center;
+      aspect-ratio: 16/9;
+      margin: 0 auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(90deg, #87ceeb, #4b9cd3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #87ceeb;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
     .btn-primary {
       background: linear-gradient(90deg, #87ceeb, #4b9cd3);
@@ -122,7 +207,7 @@
         font-size: 1.75rem;
       }
     }
-    .skills-card, .cert-card {
+    .skills-card, .cert-card, .edu-card, .work-card, .publication-card {
       background-color: #ffffff;
       border: 2px solid #87ceeb;
       border-radius: 12px;
@@ -130,7 +215,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
     }
-    .skills-card:hover, .cert-card:hover {
+    .skills-card:hover, .cert-card:hover, .edu-card:hover, .work-card:hover, .publication-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
@@ -176,6 +261,51 @@
       margin: 0 auto;
       display: block;
     }
+    .accordion-header {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #f1f5f9;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .accordion-header:hover {
+      background: #e2e8f0;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .accordion-content.open {
+      max-height: 200px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: #87ceeb;
+      border-radius: 50%;
+      margin-top: 0.5rem;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1.5rem;
+      bottom: -1rem;
+      width: 2px;
+      background: #87ceeb;
+    }
   </style>
 </head>
 <body>
@@ -183,8 +313,11 @@
   <nav class="text-center">
     <a href="#about-title">About</a>
     <a href="#certifications-title">Certifications</a>
+    <a href="#education-title">Education</a>
+    <a href="#work-title">Work Experience</a>
     <a href="#skills-title">Skills</a>
     <a href="#projects-title">Projects</a>
+    <a href="#publications-title">Publications</a>
     <a href="#teaching-title">Teaching</a>
   </nav>
 
@@ -218,6 +351,75 @@
       <img src="CER/cert.PNG" alt="Harvard Online Computer Science Certificate" class="cert-img" loading="lazy">
       <div class="text-center mt-4">
         <a href="https://certificates.cs50.io/23dd40d4-d013-4c27-a51e-40e98ab0c767.pdf?size=letter" target="_blank" class="btn-primary inline-block">Verify Certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="py-12 px-4" role="region" aria-labelledby="education-title">
+    <h2 id="education-title" class="section-title">Education</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="edu-card fade-in">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
+          <i class="fas fa-graduation-cap mr-2"></i> M.Sc. in Remote Sensing
+        </h3>
+        <p class="text-center"><strong>Shahid Beheshti University, Tehran, Iran</strong> | 2018 – 2022</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Ranked 14th nationwide in M.Sc. entrance exam (Top 0.3%) and 1st in Remote Sensing section.</li Asc
+          <li>Thesis: Prediction and Estimation of Wheat Yield Using Sentinel-2 Imagery and Deep Learning Methods (Achieved 85% accuracy in yield prediction).</li>
+          <li>Supervisor: Dr. Davood Ashourloo | GPA: 3.22/4.0</li>
+        </ul>
+      </div>
+      <div class="edu-card fade-in">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
+          <i class="fas fa-graduation-cap mr-2"></i> B.Sc. in Geomorphology
+        </h3>
+        <p class="text-center"><strong>Mohaghegh Ardabili University, Ardabil, Iran</strong> | 2013 – 2018</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="work-title">
+    <h2 id="work-title" class="section-title">Work Experience</h2>
+    <div class="max-w-5xl mx-auto space-y-6">
+      <div class="work-card fade-in timeline-item">
+        <h3 class="text-xl font-bold mb-2 text-sky-600">Co-founder, Arta Sanjesh Negar</h3>
+        <p><strong>Remote Sensing & Environmental Services Startup</strong> | 2024 – Present</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Co-founded a company focused on remote sensing solutions for natural hazard monitoring, sustainable agriculture, and environmental conservation.</li>
+          <li>Lead a team of 10 specialists, developing AI-driven models to enhance disaster risk assessment and crop monitoring.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in timeline-item">
+        <h3 class="text-xl font-bold mb-2 text-sky-600">Founder, ModisAcademy.ir</h3>
+        <p><strong>Online Platform for Earth Observation Education</strong> | 2023 – Present</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Founded a platform to provide training in remote sensing and geospatial programming.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in timeline-item">
+        <h3 class="text-xl font-bold mb-2 text-sky-600">Remote Sensing Researcher, Cropinno Co.</h3>
+        <p><strong>International Precision Agriculture Company</strong> | 2021 – 2022</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Contributed to a remote sensing research team, developing models for precision agriculture.</li>
+          <li>Enhanced crop yield estimation accuracy by 15% using satellite imagery and machine learning.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in timeline-item">
+        <h3 class="text-xl font-bold mb-2 text-sky-600">Remote Sensing Manager, Keshtyar Co.</h3>
+        <p><strong>Precision Agriculture Company</strong> | 2020 – 2021</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Managed the remote sensing division, overseeing agricultural land monitoring projects.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in timeline-item">
+        <h3 class="text-xl font-bold mb-2 text-sky-600">Instructor, FaraDars, Maktabkhooneh, GIRS, Zamin Pey Jooyan Co.</h3>
+        <p><strong>Online & In-Person Geospatial Training</strong> | 2018 – Present</p>
+        <ul class="list-disc list-inside mt-4 text-base">
+          <li>Designed and delivered courses on remote sensing, GIS, and geospatial analysis.</li>
+          <li>Trained 2,000+ learners across online platforms, enhancing their technical expertise in Earth observation.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -341,6 +543,49 @@
     </div>
   </section>
 
+  <!-- Publications Section -->
+  <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="publications-title">
+    <h2 id="publications-title" class="section-title">Publications</h2>
+    <div class="max-w-5xl mx-auto space-y-4">
+      <div class="publication-card fade-in">
+        <div class="accordion-header">
+          <h3 class="text-lg font-bold text-sky-600">Land Use Change Analysis Using Pixel-Based and Object-Oriented Methods and Its Impact on Soil Erosion (Case Study: Maragheh County)</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p class="mt-2">Asghari Saraskanrud, S., Mohammadnejad, V., & Emami, H. (2019). Published in <em>Quantitative Geomorphological Research, 8(1), 160–178</em>.</p>
+        </div>
+      </div>
+      <div class="publication-card fade-in">
+        <div class="accordion-header">
+          <h3 class="text-lg font-bold text-sky-600">Land Surface Temperature Monitoring and Its Relationship with Land Use Using OLI and ETM+ Sensors (Case Study: Ardabil County)</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p class="mt-2">Asghari Saraskanrud, S., & Emami, H. (2019). Published in <em>Applied Geographical Sciences Research, 19(53), 195–215</em>.</p>
+        </div>
+      </div>
+      <div class="publication-card fade-in">
+        <div class="accordion-header">
+          <h3 class="text-lg font-bold text-sky-600">Network Analysis and Fuzzy Logic Models for Landslide Susceptibility Mapping (Case Study: Sarab-Nir Road)</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p class="mt-2">Asghari Saraskanrud, S., Emami, H., Palizban, D. (2020). Published in <em>Geography and Planning, 24(73), 1–22</em>.</p>
+        </div>
+      </div>
+      <div class="publication-card fade-in">
+        <div class="accordion-header">
+          <h3 class="text-lg font-bold text-sky-600">Assessing Climate Change Impacts on Bee Species Distribution in Iran Using Deep Learning Models</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+          <p class="mt-2">Emami, H., et al. (In Preparation). To be published in <em>International Journal</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Teaching Section (Slider) -->
   <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="teaching-title">
     <h2 id="teaching-title" class="section-title">Teaching</h2>
@@ -412,7 +657,6 @@
           </div>
         </div>
         <div class="swiper-slide hover-scale">
-          <img src="assets/Landslide Susceptibility Mapping with ANP.png" alt="Landslide Susceptibility Mapping with ANP course cover" loading="lazy">
           <div class="p-4 text-center">
             <h3 class="text-xl font-bold">Landslide Susceptibility Mapping</h3>
             <p>Create landslide susceptibility maps using Analytic Network Process.</p>
@@ -514,7 +758,7 @@
     </div>
   </section>
 
-  <!-- Swiper Initialization Script -->
+  <!-- Swiper Initialization and Accordion Script -->
   <script>
     // Initialize Projects Slider
     new Swiper('.projects-slider', {
@@ -560,7 +804,7 @@
       },
     });
 
-    // Fade-in Animation for Skills and Certifications Sections
+    // Fade-in Animation for Sections
     const fadeInElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -570,6 +814,18 @@
       });
     }, { threshold: 0.1 });
     fadeInElements.forEach((el) => observer.observe(el));
+
+    // Accordion Functionality for Publications
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isOpen = content.classList.contains('open');
+        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+        if (!isOpen) {
+          content.classList.add('open');
+        }
+      });
+    });
   </script>
 </body>
 </html>
