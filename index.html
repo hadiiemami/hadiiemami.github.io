@@ -37,12 +37,11 @@
     .section-title {
       font-size: 2.25rem;
       font-weight: 700;
-      text-align: left;
+      text-align: center;
       margin-bottom: 2.5rem;
       background: linear-gradient(90deg, #87ceeb, #4b9cd3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: slideInLeft 0.6s ease-out;
     }
     .profile-img {
       width: 160px;
@@ -51,7 +50,6 @@
       border: 4px solid #87ceeb;
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      animation: scaleUp 0.8s ease-out;
     }
     .hover-scale {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -67,7 +65,6 @@
       border-radius: 0.5rem;
       transition: background 0.3s ease, transform 0.2s ease;
       font-weight: 600;
-      animation: fadeInUp 0.5s ease-out;
     }
     .btn-primary:hover {
       background: linear-gradient(90deg, #6ab0d6, #3b82f6);
@@ -85,14 +82,12 @@
       min-height: 320px;
       position: relative;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-out;
     }
     .teaching-slider .swiper-slide {
       height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: slideInUp 0.7s ease-out;
     }
     .teaching-slider .swiper-wrapper {
       align-items: stretch;
@@ -105,37 +100,15 @@
       z-index: 1000;
       padding: 1rem 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      text-align: left;
     }
     nav a {
       color: #1f2937;
       font-weight: 600;
       padding: 0.5rem 1rem;
       transition: color 0.3s ease;
-      display: inline-block;
-      animation: fadeInRight 0.5s ease-out;
     }
     nav a:hover {
       color: #4b9cd3;
-    }
-    .social-links {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      display: flex;
-      gap: 0.75rem;
-      animation: slideInLeft 0.5s ease-out;
-    }
-    .social-links a {
-      color: #1f2937;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-    .social-links a:hover {
-      color: #4b9cd3;
-      transform: scale(1.1);
-    }
-    .social-links i {
-      font-size: 1.25rem;
     }
     @media (max-width: 640px) {
       header {
@@ -148,9 +121,6 @@
       .section-title {
         font-size: 1.75rem;
       }
-      .social-links i {
-        font-size: 1rem;
-      }
     }
     .skills-card, .cert-card {
       background-color: #ffffff;
@@ -159,7 +129,6 @@
       padding: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-      animation: scaleUp 0.7s ease-out;
     }
     .skills-card:hover, .cert-card:hover {
       transform: translateY(-5px);
@@ -171,7 +140,6 @@
       margin-bottom: 0.75rem;
       font-size: 1rem;
       color: #1f2937;
-      animation: fadeInUp 0.6s ease-out;
     }
     .skill-item i {
       color: #87ceeb;
@@ -180,7 +148,7 @@
       text-align: center;
     }
     .fade-in {
-      opacity circuito 0;
+      opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
@@ -194,7 +162,6 @@
       border-radius: 3px;
       overflow: hidden;
       margin-top: 0.25rem;
-      animation: slideInRight 0.8s ease-out;
     }
     .progress-bar-fill {
       height: 100%;
@@ -208,41 +175,12 @@
       border: 2px solid #87ceeb;
       margin: 0 auto;
       display: block;
-      animation: scaleUp 0.7s ease-out;
-    }
-    /* Modern Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes scaleUp {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
-  <!-- Social Links -->
-  <div class="social-links">
-    <a href="https://github.com/hadiiemami" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="Visit Hadi Emami's GitHub Profile"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/hadi-emami-4973142b1" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="Visit Hadi Emami's LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:hadiemami1995@gmail.com" class="text-sky-400 hover:text-sky-500" aria-label="Email Hadi Emami"><i class="fas fa-envelope"></i></a>
-  </div>
-
   <!-- Navigation -->
-  <nav>
+  <nav class="text-center">
     <a href="#about-title">About</a>
     <a href="#certifications-title">Certifications</a>
     <a href="#skills-title">Skills</a>
@@ -255,12 +193,17 @@
     <img src="photo_2024-02-07_15-48-40.jpg" alt="Hadi Emami's profile picture" class="profile-img mx-auto mb-4" loading="lazy">
     <h1 class="text-4xl md:text-5xl font-bold">Hadi Emami</h1>
     <p class="text-base md:text-lg mt-2">Data Specialist, Programmer, and Instructor</p>
+    <div class="mt-4 flex justify-center space-x-4">
+      <a href="https://github.com/hadiiemami" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="GitHub Profile"><i class="fab fa-github fa-2x"></i></a>
+      <a href="www.linkedin.com/in/hadi-emami-4973142b1" target="_blank" class="text-sky-400 hover:text-sky-500" aria-label="LinkedIn Profile"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="mailto:hadi.emami@example.com" class="text-sky-400 hover:text-sky-500" aria-label="Email Hadi Emami"><i class="fas fa-envelope fa-2x"></i></a>
+    </div>
   </header>
 
   <!-- About Section -->
   <section class="py-12 px-4" role="region" aria-labelledby="about-title">
     <h2 id="about-title" class="section-title">About Me</h2>
-    <p class="text-left max-w-2xl mx-auto text-base md:text-lg">
+    <p class="text-center max-w-2xl mx-auto text-base md:text-lg">
       I'm Hadi Emami, a data specialist with expertise in remote sensing data analysis and programming. Passionate about teaching and developing innovative projects in technology and agriculture.
     </p>
   </section>
@@ -269,7 +212,7 @@
   <section class="py-12 px-4 bg-gray-50" role="region" aria-labelledby="certifications-title">
     <h2 id="certifications-title" class="section-title">Certifications</h2>
     <div class="cert-card fade-in max-w-2xl mx-auto">
-      <h3 class="text-xl font-bold text-left mb-4 text-sky-600 flex items-center">
+      <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
         <i class="fas fa-certificate mr-2"></i> Harvard Online Computer Science Certificate
       </h3>
       <img src="CER/cert.PNG" alt="Harvard Online Computer Science Certificate" class="cert-img" loading="lazy">
@@ -285,7 +228,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       <!-- Programming & Software -->
       <div class="skills-card fade-in">
-        <h3 class="text-xl font-bold text-left mb-4 text-sky-600 flex items-center">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
           <i class="fas fa-code mr-2"></i> Programming & Software
         </h3>
         <ul class="space-y-2">
@@ -308,7 +251,7 @@
       </div>
       <!-- Data Science & Analytics -->
       <div class="skills-card fade-in">
-        <h3 class="text-xl font-bold text-left mb-4 text-sky-600 flex items-center">
+        <h3 class="text-xl font-bold text-center mb-4 text-sky-600 flex items-center justify-center">
           <i class="fas fa-chart-line mr-2"></i> Data Science & Analytics
         </h3>
         <ul class="space-y-2">
