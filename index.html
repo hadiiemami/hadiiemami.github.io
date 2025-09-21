@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>رزومه شخصی</title>
+  <meta name="description" content="سایت شخصی و رزومه" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <button class="theme-toggle" aria-label="تغییر تم" title="تغییر تم">
+      <span class="icon">◐</span>
+    </button>
+    <nav class="navbar" aria-label="ناوبری اصلی">
+      <a href="#home" class="brand" aria-label="بازگشت به خانه">رزومه من</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">منو</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#about">درباره من</a></li>
+        <li><a href="#skills">مهارت‌ها</a></li>
+        <li><a href="#experience">تجربه‌ها</a></li>
+        <li><a href="#projects">پروژه‌ها</a></li>
+        <li><a href="#contact">ارتباط</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home" class="container">
+    <!-- Hero -->
+    <section class="hero card">
+      <div class="hero__text">
+        <h1 class="gradient">نام و نام‌خانوادگی</h1>
+        <p class="subtitle">عنوان شغلی / تخصص</p>
+        <p class="muted">یک معرفی کوتاه، ۱–۲ جمله درباره ارزش پیشنهادی شما.</p>
+        <div class="hero__actions">
+          <a class="btn primary" href="#projects">دیدن پروژه‌ها</a>
+          <a class="btn" href="#contact">ارتباط</a>
+        </div>
+      </div>
+      <div class="hero__avatar-wrap">
+        <!-- اگر تصویر موجود باشد نمایش داده می‌شود؛ در غیر اینصورت پنهان می‌شود -->
+        <img class="avatar" src="assets/avatar.jpg" alt="تصویر پروفایل" onerror="this.style.display='none'"/>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section card">
+      <h2>درباره من</h2>
+      <p>
+        اینجا یک متن کوتاه درباره مسیر حرفه‌ای، نقاط قوت و علایق شما.
+      </p>
+      <ul class="meta-list">
+        <li><span>موقعیت:</span> شهر، کشور</li>
+        <li><span>ایمیل:</span> <a href="mailto:your@email.com">your@email.com</a></li>
+        <li><span>گیت‌هاب:</span> <a href="https://github.com/username" target="_blank" rel="noopener">github.com/username</a></li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section card">
+      <h2>مهارت‌ها</h2>
+      <div class="chips" role="list">
+        <span role="listitem" class="chip">HTML</span>
+        <span role="listitem" class="chip">CSS</span>
+        <span role="listitem" class="chip">JavaScript</span>
+        <span role="listitem" class="chip">React</span>
+        <span role="listitem" class="chip">Node.js</span>
+        <span role="listitem" class="chip">Git</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section card">
+      <h2>تجربه‌های کاری</h2>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <div class="timeline__head">
+              <strong>عنوان شغلی</strong>
+              <span class="muted">شرکت — ۱۴۰۱ تا کنون</span>
+            </div>
+            <ul>
+              <li>دستاورد یا مسئولیت مهم اول</li>
+              <li>دستاورد یا مسئولیت مهم دوم</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <div class="timeline__head">
+              <strong>عنوان شغلی</strong>
+              <span class="muted">شرکت — ۱۳۹۹ تا ۱۴۰۱</span>
+            </div>
+            <ul>
+              <li>دستاورد یا مسئولیت مهم</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section card">
+      <h2>پروژه‌ها</h2>
+      <div class="grid">
+        <article class="project">
+          <div class="project__media">
+            <!-- اگر تصویر پروژه موجود باشد نمایش داده می‌شود -->
+            <img src="assets/project-1.jpg" alt="پیش‌نمایش پروژه ۱" onerror="this.style.display='none'"/>
+          </div>
+          <div class="project__body">
+            <h3>نام پروژه ۱</h3>
+            <p class="muted">توضیح کوتاه پروژه و تکنولوژی‌های استفاده‌شده.</p>
+            <div class="project__actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">دمو</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noopener">کد</a>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project__media">
+            <img src="assets/project-2.jpg" alt="پیش‌نمایش پروژه ۲" onerror="this.style.display='none'"/>
+          </div>
+          <div class="project__body">
+            <h3>نام پروژه ۲</h3>
+            <p class="muted">خلاصه امکانات و نقش شما.</p>
+            <div class="project__actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">دمو</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noopener">کد</a>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project__media">
+            <img src="assets/project-3.jpg" alt="پیش‌نمایش پروژه ۳" onerror="this.style.display='none'"/>
+          </div>
+          <div class="project__body">
+            <h3>نام پروژه ۳</h3>
+            <p class="muted">نتیجه و تاثیر پروژه.</p>
+            <div class="project__actions">
+              <a class="btn small" href="#" target="_blank" rel="noopener">دمو</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noopener">کد</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section card">
+      <h2>ارتباط</h2>
+      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <div class="row">
+          <label>نام
+            <input name="name" required />
+          </label>
+          <label>ایمیل
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <label>پیام
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">ارسال</button>
+      </form>
+      <div class="socials">
+        <a href="https://github.com/username" aria-label="گیت‌هاب">GitHub</a>
+        <a href="https://linkedin.com/in/username" aria-label="لینکدین">LinkedIn</a>
+        <a href="mailto:your@email.com" aria-label="ایمیل">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="muted">© <span id="year"></span> همه حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
